@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="total">
+
+        <div class="input">
+            <input type="text" id="box" placeholder="0" readonly>
+        </div>
+
+        <div class="btns">
+
+            <button onclick="swipe()" class="gray">AC</button>
+            <button onclick="erase()" class="gray">DEL</button>
+            <button onclick="show('%')" class="gray">%</button>
+            <button onclick="show('/')" class="orange">/</button>
+            <button onclick="show('7')" class="white">7</button>
+            <button onclick="show('8')" class="white">8</button>
+            <button onclick="show('9')" class="white">9</button>
+            <button onclick="show('*')" class="orange">*</button>
+            <button onclick="show('4')" class="white">4</button>
+            <button onclick="show('5')" class="white">5</button>
+            <button onclick="show('6')" class="white">6</button>
+            <button onclick="show('-')" class="orange">-</button>
+            <button onclick="show('1')" class="white">1</button>
+            <button onclick="show('2')" class="white">2</button>
+            <button onclick="show('3')" class="white">3</button>
+            <button onclick="show('+')" class="orange">+</button>
+            <button onclick="show('0')" class="white" id="special">0</button>
+            <button onclick="show('.')" class="white">.</button>
+            <button onclick="equal()" class="orange">=</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var inputbox = document.getElementById("box");
+
+        function show(answer) {
+            inputbox.value += answer;
+        }
+
+        function equal() {
+            var solution = eval(inputbox.value);
+            inputbox.value = solution;
+        }
+
+        function swipe(){
+            inputbox.value = "";
+        }
+
+        function erase(){
+            inputbox.value = inputbox.value.slice(0,-1);
+        }
+
+    </script>
+
+</body>
+
+</html>
