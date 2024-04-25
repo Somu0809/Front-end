@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="total">
+
+        <h1>Login To Coding Market</h1>
+
+        <div class="username">
+            <label for="">Email or Username</label>
+            <input type="text" id="name">
+        </div>
+
+        <div class="password">
+            <label for="">Password</label>
+            <input type="password" id="pass">
+        </div>
+
+        <div class="all">
+            <div id="res"></div>
+
+            <button onclick="checking()">LOGIN</button>
+        </div>
+
+
+    </div>
+
+    <script>
+
+        function checking() {
+        
+            var userbox = document.getElementById("name");
+            var passbox = document.getElementById("pass");
+            var username = document.getElementById("name").value;
+            var password = document.getElementById("pass").value;
+            var result = document.getElementById("res");
+
+            if (username == '' || password == '') {
+                result.innerHTML = "Username or password cannot be empty"
+                result.className = "red";
+                userbox.className = "border";
+                passbox.className = "border";
+            }
+            else if (username.length < 4) {
+                result.innerHTML = "Username must contain minimum 4 characters"
+                result.className = "red";
+                userbox.className = "border";
+            }
+            else if (password.length < 6 || password.length > 12) {
+                result.innerHTML = "Password must contain 6 to 12 characters"
+                result.className = "red";
+                passbox.className = "border";
+            }
+            else {
+                result.innerHTML = "Successful"
+                result.className = "green";
+                passbox.classList.remove("border")
+                userbox.classList.remove("border")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
