@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    .total {
+        display: flex;
+        flex-direction: column;
+
+        .tanks {
+            display: flex;
+            gap: 50px;
+            margin-left: 250px;
+
+            .tank1,
+            .tank2,
+            .tank3 {
+                display: flex;
+                /* align-items: flex-end; */
+
+                .tank {
+                    height: 300px;
+                    width: 200px;
+                    border: 2px solid black;
+                    border-top: none;
+                    display: flex;
+                    align-items: flex-end;
+
+                    .water {
+                        width: 100%;
+                        height: 250px;
+                        background-color: aqua;
+                    }
+                }
+
+                .pipe {
+                    height: 17px;
+                    width: 80px;
+                    margin-top: 285px;
+                    background-color: brown;
+                }
+
+                .all {
+                    margin-top: 260px;
+
+                    button {
+                        background-color: red;
+                        width: 30px;
+                        height: 17px;
+                        margin-left: -7px;
+                    }
+
+                    .subpipe {
+                        height: 50px;
+                        width: 15px;
+                        background-color: brown;
+                        margin-top: -10px;
+                    }
+
+                    .flow {
+                        height: 300px;
+                        width: 15px;
+                        background-color: aqua;
+                    }
+                }
+            }
+        }
+
+        .vessel {
+            display: flex;
+            align-items: flex-end;
+            margin-top: -200px;
+            margin-left: 430px;
+            height: 200px;
+            width: 900px;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            /* overflow: hidden; */
+
+            .vesselWater {
+                background-color: aqua;
+                height: 0px;
+                width: 100%;
+            }
+        }
+    }
+}
