@@ -1,0 +1,121 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/bg-intro-desktop.png);
+    background-color: hsl(0, 100%, 74%);
+
+    .total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        .info {
+            width: 550px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            color: white;
+
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .trial-box {
+            background-color: hsl(248, 32%, 49%);
+            padding: 15px;
+            border-radius: 10px;
+            width: 410px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: white;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .all-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px 20px;
+            /* border: 1px solid black; */
+            gap: 15px;
+            background-color: white;
+            border-radius: 10px;
+
+            .one,
+            .two,
+            .three,
+            .four {
+                text-align: right;
+            }
+
+            button,
+            input {
+                height: 50px;
+                width: 400px;
+                border-radius: 10px;
+            }
+
+            input {
+                border: 1px solid hsl(246, 25%, 77%);
+                padding: 0px 20px;
+                width: 360px;
+                font-size: 18px;
+            }
+
+            .errorborder{
+                border: 3px solid hsl(0, 100%, 74%);
+            }
+
+            .red{
+                color: hsl(0, 100%, 74%);
+            }
+
+            button {
+                border: none;
+                background-color: hsl(154, 59%, 51%);
+                color: white;
+                cursor: pointer;
+            }
+
+            p {
+                color: hsl(246, 25%, 77%);
+                font-size: 12px;
+
+                span {
+                    color: hsl(0, 100%, 74%);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
