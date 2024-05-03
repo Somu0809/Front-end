@@ -1,0 +1,149 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(216, 12%, 8%);
+}
+
+.combined {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: hsl(213, 19%, 18%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.star {
+    background-color: hsl(216, 12%, 54%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ratingnumber {
+    display: flex;
+    gap: 10px;
+
+    .one,
+    .two,
+    .three,
+    .four,
+    .five {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: hsl(216, 12%, 54%);
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
+    }
+
+    .one .active,
+    .two .active,
+    .three .active,
+    .four .active,
+    .five .active{
+        background-color: hsl(25, 97%, 53%);
+        color: hsl(0, 0%, 100%);
+
+    }
+}
+
+.head {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+        color: hsl(0, 0%, 100%);
+    }
+
+    p {
+        color: hsl(217, 12%, 63%);
+        font-size: 15px;
+    }
+}
+
+button {
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:active{
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+
+.next {
+    background-color: hsl(213, 19%, 18%);
+    padding: 40px 20px;
+    border-radius: 20px;
+    position: absolute;
+    scale: 0;
+
+    .full {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        p {
+            color: hsl(25, 97%, 53%);
+            padding: 5px 10px;
+            background-color: hsla(217, 12%, 63%, 0.5);
+            border-radius: 20px;
+        }
+
+        .txt {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: hsl(0, 0%, 100%);
+            }
+
+            p {
+                width: 310px;
+                text-align: center;
+                font-size: 15px;
+                color: hsl(216, 12%, 54%);
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.popup{
+    scale: 1;
+}
