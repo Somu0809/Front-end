@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tasker</title>
+</head>
+
+<body>
+
+    <div class="total">
+
+        <div class="full" id="full">
+
+            <div class="image">
+                <img src="Images/Todo Logo.png" alt="Taskify">
+            </div>
+
+            <div class="content">
+
+                <div class="text">
+
+                    <div class="top">
+                        <h1>Welcome to Tasker</h1>
+                        <p>Please, insert your informations to access your tasks</p>
+                    </div>
+
+                    <div class="email">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="Insert your email" id="originalEmail">
+                    </div>
+
+                    <div class="password">
+                        <label for="">Password</label>
+                        <input type="password" placeholder="Insert your password" id="originalPassword">
+                    </div>
+
+                    <div class="remember">
+                        <input type="checkbox">
+                        <p>Remember me</p>
+                    </div>
+
+                    <button id="signinBtn">Sign in</button>
+
+                    <div class="signup">
+                        <P>Don't have an account? <span id="signupopen">Sign up</span></P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="register" id="register">
+
+            <h2>Register Here</h2>
+
+            <div class="nametag">
+                <label for="">Name</label>
+                <input type="text" id="name1" placeholder="Enter your name">
+            </div>
+
+            <div class="emailtag">
+                <label for="">Email</label>
+                <input type="email" id="email1" placeholder="Enter the email">
+            </div>
+
+            <div class="passwordtag">
+                <label for="">Password</label>
+                <input type="password" id="pass1" placeholder="Enter your password">
+            </div>
+
+            <button id="signupBtn">Sign Up</button>
+
+            <p>Already have an account? <span id="login">Login here</span></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .total {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .full {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            .image {
+                height: 100vh;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(245, 245, 8, 0.5);
+                /* background-color: rgba(11, 252, 252, 0.342); */
+
+                img {
+                    height: 400px;
+                    width: 400px;
+                }
+            }
+
+            .content {
+                height: 100vh;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 30px;
+                    gap: 15px;
+
+                    .top {
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        h1 {
+                            font-size: 38px;
+                            font-family: "Roboto", sans-serif;
+                            font-weight: bold;
+                            font-style: normal;
+                        }
+
+                        p {
+                            color: rgba(104, 103, 103, 0.829);
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .email {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        label {
+                            font-family: "Roboto", sans-serif;
+                            font-weight: bold;
+                            font-style: normal;
+                            color: rgba(80, 79, 79, 0.863);
+                        }
+
+                        input {
+                            width: 280px;
+                        }
+                    }
+
+                    .password {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        label {
+                            font-family: "Roboto", sans-serif;
+                            font-weight: bold;
+                            font-style: normal;
+                            color: rgba(80, 79, 79, 0.863);
+                        }
+
+                        input {
+                            width: 280px;
+                        }
+                    }
+
+                    .remember {
+                        display: flex;
+                        gap: 10px;
+
+                        p {
+                            color: rgba(104, 103, 103, 0.829);
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+                    }
+
+                    input {
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        border: 1px solid rgba(104, 103, 103, 0.829);
+                    }
+
+                    button {
+                        background-color: purple;
+                        color: white;
+                        padding: 10px;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        width: 300px;
+                    }
+
+                    .signup {
+                        p {
+                            color: rgba(104, 103, 103, 0.829);
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+
+                            span {
+                                color: purple;
+                                font-weight: bold;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .register {
+            position: absolute;
+            background-color: rgba(129, 122, 122, 0.712);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transform: scale(0);
+
+            h2 {
+                text-align: center;
+                font-size: 35px;
+                color: darkorchid;
+            }
+
+            .nametag,
+            .emailtag,
+            .passwordtag {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                label {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                input {
+                    padding: 10px;
+                    height: 20px;
+                    width: 300px;
+                    border-radius: 10px;
+                    border: 1px solid rgba(80, 79, 79, 0.863);
+                }
+            }
+
+            button {
+                padding: 10px;
+                background-color: purple;
+                border-radius: 20px;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            p {
+                text-align: center;
+
+                span {
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .show {
+            transform: scale(1);
+        }
+    }
+
+    .blurring {
+        filter: blur(15px);
+        user-select: none;
+        pointer-events: none;
+    }
+}

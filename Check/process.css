@@ -1,0 +1,459 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.left {
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.image img {
+    height: 100px;
+    width: 100px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.left ul li {
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 85%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+#specialdrop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-list {
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    background-color: rgba(245, 245, 8, 0.5);
+    display: none;
+    border-radius: 10px;
+}
+
+.category-list ul {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-list ul li {
+    display: flex;
+    align-items: center;
+    padding-left: 42px;
+    width: 100%;
+    border: none;
+}
+
+.category-list .newadd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.category-list .newadd p {
+    display: flex;
+    align-items: center;
+    padding-left: 42px;
+    width: 100%;
+    color: gray;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+li:nth-child(2) {
+    display: flex;
+    gap: 40px;
+}
+
+li:nth-child(2) p {
+    display: flex;
+    gap: 10px;
+}
+
+.logout {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 600px;
+}
+
+.logout a {
+    width: 85%;
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+
+.logout a img {
+    rotate: 180deg;
+}
+
+.right {
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(245, 245, 8, 0.5);
+    overflow: scroll;
+}
+
+.tot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav span {
+    font-size: 22px;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    width: fit-content;
+    margin-top: 0px;
+}
+
+.nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid rgba(158, 155, 155, 0.548);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav ul li img {
+    height: 25px;
+    width: 25px;
+}
+
+.nav ul li:nth-child(1) {
+    background-color: white;
+}
+
+.nav ul .white {
+    background-color: white;
+}
+
+.nav ul li:nth-child(4) {
+    border: none;
+    padding: none;
+    margin-left: 5px;
+    width: 0px;
+    height: 100%;
+}
+
+.whole-main {
+    width: 80%;
+}
+
+.empty {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.empty li {
+    position: relative;
+    padding: 15px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.363);
+    border-radius: 10px;
+    box-shadow: 0px 2px 0px 0.5px rgba(0, 0, 0, 0.486);
+}
+
+.empty li input {
+    position: absolute;
+    left: 25px;
+    height: 20px;
+    width: 20px;
+}
+
+.empty li h1 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.empty li span {
+    height: 100%;
+    width: 2px;
+    background-color: rgba(13, 13, 14, 0.616);
+    position: absolute;
+    left: 70px;
+}
+
+.empty li #edit {
+    position: absolute;
+    right: 100px;
+    cursor: pointer;
+}
+
+.empty li #delete {
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+}
+
+.empty li #div {
+    margin-left: -50px;
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.empty li .strike {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.empty li .text {
+    margin-left: -470px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.btn1 {
+    background-image: url(Images/bxs--edit.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+}
+
+.btn2 {
+    background-image: url(Images/mdi--delete.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+}
+
+.empty .hidden {
+    display: none;
+}
+
+.main-display {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addtask {
+    width: 100%;
+}
+
+.addtask button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.popups {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(41, 42, 43, 0.507);
+    position: absolute;
+    scale: 0;
+}
+
+.popups .add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 25px;
+    gap: 15px;
+}
+
+.popups .add input {
+    padding: 10px;
+    width: 300px;
+    height: 20px;
+}
+
+.popups .add select {
+    padding: 10px;
+    width: 320px;
+    height: 40px;
+}
+
+.popups .add .buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.popups .add .buttons button {
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.popups .add .buttons .cancel {
+    border: 1px solid purple;
+    color: purple;
+}
+
+.popups .add .buttons .add {
+    border: 1px solid green;
+    color: green;
+}
+
+.delete {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    border-radius: 15px;
+    scale: 0;
+}
+
+.delete p {
+    color: black;
+    font-size: 21px;
+    text-align: center;
+}
+
+.delete .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.delete .options button {
+    display: flex;
+    padding: 5px 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete .options button:nth-child(1) {
+    border: 1px solid purple;
+    color: purple;
+}
+
+.delete .options button:nth-child(2) {
+    border: 1px solid red;
+    color: red;
+}
+
+.popupsopen {
+    scale: 1;
+}
+
+.blurring {
+    filter: blur(15px);
+    user-select: none;
+    pointer-events: none;
+}

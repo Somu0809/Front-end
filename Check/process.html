@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="process.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="full">
+
+        <div class="all" id="all">
+
+            <div class="left">
+
+                <div class="image">
+                    <img src="Images/Todo Logo.png" alt="Taskify">
+                </div>
+
+                <ul id="mylist">
+                    <li id="alltask"><img src="Images/fa-solid--tasks.svg" alt="tasks">Tasks</li>
+                    <li id="specialdrop">
+                        <p><img src="Images/ion--folder-outline.svg" alt="folder">Categories</p> <img
+                            src="Images/iconamoon--arrow-down-6-circle-fill.svg" alt="arrow">
+                    </li>
+                    <div class="category-list" id="category-list">
+                        <ul>
+                            <li>None</li>
+                            <li>Home</li>
+                            <li>School</li>
+                            <li>Shopping list</li>
+                            <div class="newadd">
+                                <p>Add New</p>
+                            </div>
+                        </ul>
+                    </div>
+                    <li><img src="Images/solar--settings-bold.svg" alt="settings"></i>Settings</li>
+                </ul>
+
+                <div class="logout">
+                    <a href="index.html"><img src="Images/material-symbols--logout-rounded.svg" alt="logout">Logout</a>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="tot">
+
+                    <h1>All your tasks</h1>
+
+                    <div class="nav">
+                        <span>Tasks</span>
+
+                        <ul>
+                            <li id="colorChanger">All</li>
+                            <li id="colorChanger1">Done</li>
+                            <li id="colorChanger2">Not done</li>
+                            <li id="colorChanger"><img src="Images/flowbite--filter-solid.svg" alt="filter"></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="whole-main">
+
+                    <ul class="empty" id="empty">
+                        
+                    </ul>
+
+                    <div class="main-display">
+
+                        <div class="addtask">
+                            <button onclick="adding()"> <img src="Images/gg--add-r.svg" alt="add">Add a task</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popups" id="popups">
+
+            <div class="add">
+                <label for="">Insert name</label>
+                <input type="text" id="taskname" placeholder="Task name">
+                <label for="">Select a category</label>
+                <select id="selection">
+                    <option value="0">None</option>
+                    <option value="1">Home</option>
+                    <option value="2">School</option>
+                    <option value="3">Shopping list</option>
+                </select>
+
+                <div class="buttons">
+                    <button class="cancel" onclick="cancel()">Cancel</button>
+                    <button class="add" onclick="addTask()">Add</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="delete" id="delete">
+
+            <p>Are you sure you want to delete this task?</p>
+
+            <div class="options">
+                <button onclick="cancelDelete()">Cancel</button>
+                <button onclick="deleteItem()" id="confirmdelete">Delete</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="process.js"></script>
+
+</body>
+
+</html>
