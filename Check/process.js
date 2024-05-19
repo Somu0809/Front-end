@@ -52,13 +52,6 @@ changer2.addEventListener("click", function () {
     });
 });
 
-document.getElementById("alltask").addEventListener("click", function () {
-    var allItems = document.querySelectorAll("#empty li");
-    allItems.forEach(function (item) {
-        item.style.display = "flex";
-    });
-});
-
 function adding() {
     opening.classList.add("popupsopen");
     everything.classList.add("blurring");
@@ -85,7 +78,8 @@ function addTask() {
     var task = {
         id: uniqueId,
         name: inputValue,
-        category: selectvalue
+        category: selectvalue,
+        checked: false // Default checked status is false
     };
 
     // Get existing tasks from localStorage or initialize an empty array
@@ -114,100 +108,26 @@ function displayTasks() {
 
     // Loop through each task and display it on the UI
     tasks.forEach(function (task) {
-        var li = document.createElement("li");
-        li.id = task.id;
-
-        var radio = document.createElement("input");
-        radio.type = "checkbox";
-        radio.name = "itemRadio";
-        radio.classList.add("one");
-        radio.addEventListener("change", function () {
-            toggleStrike(task.id);
-        });
-
-        var line = document.createElement("span");
-        line.classList.add("line");
-
-        var div = document.createElement("div");
-        div.classList.add("text")
-        div.id = "div"
-
-        var p1 = document.createElement("h1");
-        p1.textContent = task.name;
-        p1.classList.add("h1tag")
-
-        var p2 = document.createElement("p");
-        p2.textContent = task.category;
-
-        var editButton = document.createElement("button");
-        editButton.id = "edit";
-        editButton.classList.add("btn1");
-
-        var deleteButton = document.createElement("button");
-        deleteButton.id = "delete"
-        deleteButton.classList.add("btn2");
-        deleteButton.addEventListener("click", function () {
-            uniqueIdToDelete = task.id;
-            delpop.classList.add("popupsopen");
-            everything.classList.add("blurring");
-        });
-
-        div.appendChild(p1);
-        div.appendChild(p2);
-
-        li.appendChild(radio);
-        li.appendChild(line);
-        li.appendChild(div);
-        li.appendChild(editButton);
-        li.appendChild(deleteButton);
-
-        document.getElementById("empty").appendChild(li);
+        renderTask(task);
     });
 }
 
-window.onload = function () {
-    displayTasks();
-};
-
-document.querySelectorAll("#category-list ul li").forEach(function (categoryItem) {
-    categoryItem.addEventListener("click", function () {
-        var categoryText = categoryItem.textContent;
-
-        document.querySelectorAll("#empty li").forEach(function (taskItem) {
-            var taskCategory = taskItem.querySelector(".text p:last-child").textContent;
-
-            if (categoryText === taskCategory) {
-                taskItem.style.display = "flex";
-            } else {
-                taskItem.style.display = "none";
-            }
-        });
-    });
-});
-
 function toggleStrike(itemId) {
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    var task = tasks.find(function (task) {
+        return task.id === itemId;
+    });
+
+    if (task) {
+        task.checked = !task.checked; // Toggle the checked status
+        localStorage.setItem("tasks", JSON.stringify(tasks)); // Update localStorage
+    }
+
     var item = document.getElementById(itemId);
     var pTags = item.querySelectorAll("h1");
     pTags.forEach(function (p) {
         p.classList.toggle("strike");
     });
-}
-
-function deleteItem(itemId) {
-    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks = tasks.filter(function (task) {
-        return task.id !== itemId;
-    });
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
-    var item = document.getElementById(itemId);
-    item.parentNode.removeChild(item);
-}
-
-function cancelDelete() {
-    delpop.classList.remove("popupsopen");
-    everything.classList.remove("blurring");
-    inputvalue.value = "";
 }
 
 var condel = document.getElementById("confirmdelete");
@@ -222,3 +142,105 @@ condel.addEventListener("click", function () {
 document.getElementById("specialdrop").addEventListener("click", function () {
     document.getElementById("category-list").classList.toggle("show");
 });
+
+function cancelDelete() {
+    delpop.classList.remove("popupsopen");
+    everything.classList.remove("blurring");
+    inputvalue.value = "";
+}
+
+function deleteItem(itemId) {
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(function (task) {
+        return task.id !== itemId;
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    var item = document.getElementById(itemId);
+    item.parentNode.removeChild(item);
+}
+
+document.getElementById("alltask").addEventListener("click", function () {
+    displayTasks();
+});
+
+document.querySelectorAll("#category-list ul li").forEach(function (categoryItem) {
+    categoryItem.addEventListener("click", function () {
+        var categoryText = categoryItem.textContent;
+
+        // Retrieve tasks from localStorage
+        var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Filter tasks based on the selected category
+        var filteredTasks = tasks.filter(function(task) {
+            return task.category === categoryText;
+        });
+
+        // Clear the existing tasks on the UI
+        empty.innerHTML = '';
+
+        // Render the filtered tasks
+        filteredTasks.forEach(function(task) {
+            renderTask(task);
+        });
+    });
+});
+
+function renderTask(task) {
+    var li = document.createElement("li");
+    li.id = task.id;
+
+    var radio = document.createElement("input");
+    radio.type = "checkbox";
+    radio.name = "itemRadio";
+    radio.classList.add("one");
+    radio.checked = task.checked; // Set the checkbox status
+    radio.addEventListener("change", function () {
+        toggleStrike(task.id);
+    });
+
+    var line = document.createElement("span");
+    line.classList.add("line");
+
+    var div = document.createElement("div");
+    div.classList.add("text")
+    div.id = "div"
+
+    var p1 = document.createElement("h1");
+    p1.textContent = task.name;
+    p1.classList.add("h1tag")
+    if (task.checked) {
+        p1.classList.add("strike"); // Add strike class if checked
+    }
+
+    var p2 = document.createElement("p");
+    p2.textContent = task.category;
+
+    var editButton = document.createElement("button");
+    editButton.id = "edit";
+    editButton.classList.add("btn1");
+
+    var deleteButton = document.createElement("button");
+    deleteButton.id = "delete"
+    deleteButton.classList.add("btn2");
+    deleteButton.addEventListener("click", function () {
+        uniqueIdToDelete = task.id;
+        delpop.classList.add("popupsopen");
+        everything.classList.add("blurring");
+    });
+
+    div.appendChild(p1);
+    div.appendChild(p2);
+
+    li.appendChild(radio);
+    li.appendChild(line);
+    li.appendChild(div);
+    li.appendChild(editButton);
+    li.appendChild(deleteButton);
+
+    document.getElementById("empty").appendChild(li);
+}
+
+window.onload = function () {
+    displayTasks();
+};
